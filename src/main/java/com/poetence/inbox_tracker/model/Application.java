@@ -30,7 +30,7 @@ public class Application {
 
     private Instant deadline;
 
-    @Column(name = "updated_at", nullable = false,)
+    @Column(name = "updated_at", nullable = false)
     private Instant updatedAt;
 
     @Column(name = "created_at", nullable = false, updatable = false)
