@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:16
+    container_name: inbox-tracker-db
+    environment:
+      POSTGRES_DB: inbox_tracker
+      POSTGRES_USER: inbox
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-inbox}
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:

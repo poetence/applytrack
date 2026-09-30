@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: inbox-tracker
+  datasource:
+    url: jdbc:postgresql://localhost:5432/inbox_tracker
+    username: inbox
+    password: ${DB_PASSWORD:inbox}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+  flyway:
+    enabled: true
