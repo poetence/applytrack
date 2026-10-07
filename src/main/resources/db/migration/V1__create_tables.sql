@@ -13,7 +13,7 @@ CREATE TABLE email_logs (
     message_id VARCHAR(512) NOT NULL UNIQUE ,
     subject VARCHAR(500) ,
     sender VARCHAR(255) ,
-    recieved_at TIMESTAMPTZ ,
+    received_at TIMESTAMPTZ ,
     classification VARCHAR(32) NOT NULL ,
     raw_snippet TEXT
 );
