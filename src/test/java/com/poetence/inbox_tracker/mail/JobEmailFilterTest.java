@@ -34,4 +34,9 @@ class JobEmailFilterTest {
     void handlesNullFields() {
         assertFalse(filter.isJobRelated(mail(null, null, null)));
     }
+    @Test
+    void ignoresLinkedInJobAlerts() {
+        assertFalse(filter.isJobRelated(
+                mail("jobalerts-noreply@linkedin.com", "Software Intern: 25 new jobs for you", "")));
+    }
 }

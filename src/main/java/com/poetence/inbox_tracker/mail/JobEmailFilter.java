@@ -19,8 +19,16 @@ public class JobEmailFilter {
             "next steps", "software engineer", "position");
 
     /** Favors recall: a false positive just gets classified as OTHER later. */
+    private static final List<String> DENY_SENDERS = List.of(
+            "jobalerts-noreply@linkedin.com");
+
     public boolean isJobRelated(MailMessage m) {
         String sender = lower(m.senderAddress());
+        for (String deny : DENY_SENDERS) {
+            if (sender.contains(deny)) {
+                return false;
+            }
+        }
         for (String hint : SENDER_HINTS) {
             if (sender.contains(hint)) {
                 return true;
@@ -38,4 +46,6 @@ public class JobEmailFilter {
     private static String lower(String s) {
         return s == null ? "" : s.toLowerCase(Locale.ROOT);
     }
+
+
 }
