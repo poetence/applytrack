@@ -17,3 +17,7 @@ app:
     client-id: ${GRAPH_CLIENT_ID:not-configured}
     authority: https://login.microsoftonline.com/consumers
     token-cache-file: .msal-cache.json
+  ingest:
+    enabled: false
+    interval: PT15M
+    lookback-days: 14
