@@ -11,3 +11,9 @@ spring:
     open-in-view: false
   flyway:
     enabled: true
+
+app:
+  graph:
+    client-id: ${GRAPH_CLIENT_ID:not-configured}
+    authority: https://login.microsoftonline.com/consumers
+    token-cache-file: .msal-cache.json
