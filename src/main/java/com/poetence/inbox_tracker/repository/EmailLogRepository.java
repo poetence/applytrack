@@ -8,4 +8,5 @@ import java.util.List;
 public interface EmailLogRepository extends JpaRepository<EmailLog, Long> {
     List<EmailLog> findByApplicationIdOrderByReceivedAtDesc(Long applicationId);
     boolean existsByMessageId(String messageId);
+    List<EmailLog> findTop50ByOrderByReceivedAtDesc();
 }
